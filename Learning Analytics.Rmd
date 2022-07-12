@@ -9,22 +9,49 @@ output: word_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## R Markdown
+load packages
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+```{r}
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+library(tidyverse)
+library(janitor)
 
-```{r cars}
-summary(cars)
 ```
 
-## Including Plots
 
-You can also embed plots, for example:
+## Open University Learning Analytics Dataset
 
-```{r pressure, echo=FALSE}
-plot(pressure)
+Download Open University Learning Analytics Dataset (OULAD) from https://analyse.kmi.open.ac.uk/open_dataset#description
+
+```{r}
+
+assessments <- readr::read_delim(file = "C:/EdReports/NORC_Infinite Campus_USC/OULAD/assessments.csv", delim = ",")
+
+courses <- readr::read_delim(file = "C:/EdReports/NORC_Infinite Campus_USC/OULAD/courses.csv", delim = ",")
+
+studentAssessment <- readr::read_delim(file = "C:/EdReports/NORC_Infinite Campus_USC/OULAD/studentAssessment.csv", delim = ",")
+
+studentInfo <- readr::read_delim(file = "C:/EdReports/NORC_Infinite Campus_USC/OULAD/studentInfo.csv", delim = ",")
+
+studentRegistration <- readr::read_delim(file = "C:/EdReports/NORC_Infinite Campus_USC/OULAD/studentRegistration.csv", delim = ",")
+
+studentVle <- readr::read_delim(file = "C:/EdReports/NORC_Infinite Campus_USC/OULAD/studentVle.csv", delim = ",")
+
+vle <- readr::read_delim(file = "C:/EdReports/NORC_Infinite Campus_USC/OULAD/vle.csv", delim = ",")
+
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+glimpse
+
+```{r}
+
+glimpse(assessments)
+glimpse(courses)
+glimpse(studentAssessment)
+glimpse(studentInfo)
+glimpse(studentRegistration)
+glimpse(studentVle)
+glimpse(vle)
+
+```
+
